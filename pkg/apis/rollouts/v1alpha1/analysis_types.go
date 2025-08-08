@@ -264,6 +264,16 @@ type Authentication struct {
 	// OAuth2 config
 	// +optional
 	OAuth2 OAuth2Config `json:"oauth2,omitempty" protobuf:"bytes,2,opt,name=oauth2"`
+	// BasicAuth config
+	// +optional
+	BasicAuth BasicAuthConfig `json:"basicAuth,omitempty" protobuf:"bytes,3,opt,name=basicAuth"`
+}
+
+type BasicAuthConfig struct {
+	// Username is the username in grafana cloud
+	Username string `json:"username,omitempty" protobuf:"bytes,1,opt,name=username"`
+	// Password is the access policy token
+	Password string `json:"password,omitempty" protobuf:"bytes,2,opt,name=password"`
 }
 
 type OAuth2Config struct {
